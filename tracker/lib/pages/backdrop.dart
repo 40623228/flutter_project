@@ -1,35 +1,23 @@
 import 'package:flutter/material.dart';
-import 'pages/backdrop.dart';
 
-void main() {
-  runApp(const MyApp());
-}
 
-class MyApp extends StatelessWidget {
-  const MyApp({Key? key}) : super(key: key);
+class Backdrop extends StatefulWidget {
+  const Backdrop({
+    Key? key,
+    this.settingsPage,
+    this.homePage,
+    required this.title,
+  }) : super(key: key);
 
-  // This widget is the root of your application.
-  @override
-  Widget build(BuildContext context) {
-    return MaterialApp(
-      title: 'Flutter Demo',
-      theme: ThemeData(
-        primarySwatch: Colors.blue,
-      ),
-      home: const Backdrop(title: 'Flutter Demo Home Page'),
-    );
-  }
-}
-
-class MyHomePage extends StatefulWidget {
-  const MyHomePage({Key? key, required this.title}) : super(key: key);
+  final Widget? settingsPage;
+  final Widget? homePage;
   final String title;
 
   @override
-  State<MyHomePage> createState() => _MyHomePageState();
+  State<Backdrop> createState() => _BackdropState();
 }
 
-class _MyHomePageState extends State<MyHomePage> {
+class _BackdropState extends State<Backdrop> {
   int _counter = 0;
 
   void _incrementCounter() {
@@ -37,7 +25,6 @@ class _MyHomePageState extends State<MyHomePage> {
       _counter++;
     });
   }
-
   @override
   Widget build(BuildContext context) {
     return Scaffold(
