@@ -22,7 +22,7 @@ class _BackdropState extends State<Backdrop> {
 
   void _incrementCounter() {
     setState(() {
-      _counter++;
+      _counter--;
     });
   }
   @override
